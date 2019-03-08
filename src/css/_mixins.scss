@@ -1,0 +1,71 @@
+@mixin input-track($trackBackground: #ccc, $trackHeight: 4px, $thumbSize: 10px) {
+    $trackWidth: 100%;
+    $thumbBoxShadow: 0.7px 0.7px 0.5px rgba(0, 0, 0, 0.38), 0px 0px 0.7px rgba(13, 13, 13, 0.38);
+    $trackCursor: pointer;
+    $thumbBackground: #ffffff;
+    $thumbBorderRadius: 50%;
+
+    input[type=range] {
+        -webkit-appearance: none;
+        width: $trackWidth;
+        margin: 3px 0;
+    }
+    input[type=range]:focus {
+        outline: none;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+        width: $trackWidth;
+        height: $trackHeight;
+        cursor: $trackCursor;
+        background: $trackBackground;
+    }
+    input[type=range]::-webkit-slider-thumb {
+        box-shadow: $thumbBoxShadow;
+        height: $thumbSize;
+        width: $thumbSize;
+        border-radius: $thumbBorderRadius;
+        background: $thumbBackground;
+        cursor: $trackCursor;
+        -webkit-appearance: none;
+        margin-top: -3px;
+    }
+    input[type=range]:focus::-webkit-slider-runnable-track {
+        background: $trackBackground;
+    }
+    input[type=range]::-moz-range-track {
+        width: $trackWidth;
+        height: $trackHeight;
+        cursor: $trackCursor;
+        background: $trackBackground;
+    }
+    input[type=range]::-moz-range-thumb {
+        box-shadow: $thumbBoxShadow;
+        height: $thumbSize;
+        width: $thumbSize;
+        border-radius: $thumbBorderRadius;
+        background: $thumbBackground;
+        cursor: $trackCursor;
+    }
+    input[type=range]::-ms-track {
+        width: $trackWidth;
+        height: $trackHeight;
+        cursor: $trackCursor;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+    }
+    input[type=range]::-ms-fill-lower, input[type=range]::-ms-fill-upper {
+        background: $trackBackground;
+    }
+    input[type=range]::-ms-thumb {
+        box-shadow: $thumbBoxShadow;
+        height: $thumbSize;
+        width: $thumbSize;
+        border-radius: $thumbBorderRadius;
+        background: $thumbBackground;
+        cursor: $trackCursor;
+    }
+    input[type=range]:focus::-ms-fill-lower, input[type=range]:focus::-ms-fill-upper {
+        height: $trackHeight;
+    }
+}
